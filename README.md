@@ -1,5 +1,10 @@
 # lightline.vim
-A light and configurable statusline/tabline plugin for Vim
+
+w0rp's fork of lightline, with some modifications.
+
+## Differences from lightline
+
+* The `statusline` setting is not changed for any NERDTree buffers.
 
 https://github.com/itchyny/lightline.vim
 

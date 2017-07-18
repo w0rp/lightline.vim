@@ -20,8 +20,12 @@ function! lightline#update() abort
   endif
   let w = winnr()
   let s = winnr('$') == 1 ? [lightline#statusline(0)] : [lightline#statusline(0), lightline#statusline(1)]
+
   for n in range(1, winnr('$'))
-    call setwinvar(n, '&statusline', s[n!=w])
+    if getwinvar(n, '&filetype') !=# 'nerdtree'
+      call setwinvar(n, '&statusline', s[n!=w])
+    endif
+
     call setwinvar(n, 'lightline', n!=w)
   endfor
 endfunction
